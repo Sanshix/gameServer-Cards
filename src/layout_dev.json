@@ -1,0 +1,150 @@
+{
+  "base_config": {
+    "GameMode": {
+      "mode": "1",
+      "explain": "游戏模式，对应proto中GameMode枚举"
+    }
+  },
+  "common_config": {
+    "Time": {
+      "TimeZoneName": "CST",
+      "TimeZoneOffset": "8"
+    },
+    "MQ": {
+      "connect_string": "amqp://admin:admin@localhost:5672/"
+    },
+    "Redis": {
+      "redis_host": "localhost:6379"
+    },
+    "Mysql": {
+      "connect_string": "test:91bdab42a0@tcp(localhost)/test?charset=utf8mb4"
+    },
+    "Find": {
+      "redis_host": "localhost:6379",
+      "grpc_port": "7457"
+    },
+    "GRPC": {
+      "listen_url": ":7457"
+    },
+    "Log": {
+      "open_debug": "true",
+      "to_file": "true",
+      "log_time": "true"
+    },
+    "Lock": {
+      "redis_host": "localhost:6379"
+    },
+    "WebSocket": {
+      "listen_url": ":8855",
+      "grpc_port": "7457"
+    },
+    "Http": {
+      "listen_url": ":8856"
+    },
+    "Config": {
+      "connect_string": "test:91bdab42a0@tcp(localhost)/test?charset=utf8mb4"
+    },
+    "Authorization": {
+      "guestDefaultAuth": "1,2,3,11,12,47",
+      "playerDefaultAuth": "1,2,3,11,23,29,30,31,32,37,38,39,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,60,61,62,63,64,65,70,80,90,100,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,251,252,253,254,255,256,257,258,302,304,315",
+      "agentDefaultAuth": "",
+      "managerDefaultAuth": "1,4,5,6,7,8,9,10,13,14,15,16,17,18,19,20,21,22,24,25,27,28,33,34,35,36,40,41,42,43,105,106,107,110,111,112,115,116,301,303"
+    },
+    "SocketIO": {
+      "listen_url": ":8857",
+      "grpc_port": "7457",
+      "clear_connection_time": "20"
+    },
+    "ManagerInit": {
+      "adminAccount": "admin",
+      "adminPassword": "123456"
+    },
+    "ReportPublish": {},
+    "SplitTable": {
+      "connect_string": "test:91bdab42a0@tcp(localhost)/test?charset=utf8mb4",
+      "split_value": "7"
+    }
+  },
+  "must": {
+    "Find": {},
+    "Log": {},
+    "GRPC": {},
+    "Lock": {},
+    "Route": {},
+    "Push": {},
+    "Config": {},
+    "Authorization": {},
+    "MQ": {},
+    "Time": {},
+    "ReportPublish": {}
+  },
+  "all_server": {
+    "PlayerInfo": {},
+    "Login": {},
+    "Register": {
+      "open": "true"
+    },
+    "Http": {},
+    "Redis": {
+      "open": "true"
+    },
+    "Mysql": {
+      "open": "true"
+    },
+    "Config": {},
+    "Shortid": {
+      "open": "true",
+      "redis_host": "redis:6379"
+    },
+    "SocketIO": {
+      "open": "true"
+    },
+    "GameInfo": {
+      "open": "true",
+      "openGame": "12"
+    },
+    "SplitTable": {
+      "open": "true"
+    },
+    "PushBobbinRoute": {
+      "open": "true"
+    },
+    "PushBobbinDriver": {
+      "open": "true",
+      "multi_line": "true",
+      "RoomStateDeal": "PushBobbinDeal",
+      "RoomStateSettle": "PushBobbinSettle",
+      "RoomStateLocation": "PushBobbinLocation",
+      "RoomStateFree": "PushBobbinFree",
+      "RoomStateBet": "PushBobbinBet",
+      "RoomStateReady": "PushBobbinReady"
+    },
+    "PushBobbinDeal": {
+      "open": "true"
+    },
+    "PushBobbinSettle": {
+      "open": "true"
+    },
+    "PushBobbinLocation": {
+      "open": "true"
+    },
+    "PushBobbinBet": {
+      "open": "true"
+    },
+    "PushBobbinRule": {
+      "open": "true"
+    },
+    "PushBobbinReady": {
+      "open": "true"
+    },
+    "RobotManager": {
+      "prepare_num": "5",
+      "open_action": "1,2,3,158,159,160,161",
+      "open": "true"
+    },
+    "Robot": {
+      "multi_line": "true",
+      "handle_robot_num": "10"
+    }
+  }
+}
