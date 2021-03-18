@@ -23,14 +23,14 @@ func main() {
 
 	//读取服务编排配置
 	common.IsDev = false
-	configFileName := "./layout.json"
+	configFileName := "./layout_dev.json"
 	if len(os.Args) > 3 && os.Args[3] == "dev" {
 		configFileName = "./layout_dev.json"
 	}
 	common.IsDev = true
 	file, err := os.Open(configFileName)
 	if err != nil {
-		common.LogError("open layout.json has err", err)
+		common.LogError("open layout_dev.json has err", err)
 		return
 	}
 	defer file.Close()
