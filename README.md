@@ -84,7 +84,7 @@ tools文件夹下包含了一些常用功能的脚本，酌情使用
 Windows编写程序与Linux编写程序基本一致，除了换行符CRLF与LF的区别会使git报错及文件权限有一些差异外暂未发现其他差异
 
 ### 运行程序 
-1.  安装Go1.12.5及以上版本
+1.  安装Go1.15及以上版本
 2.  设置GOROOT和GOPATH（1.6开始不需要设置GOPATH）
 3.  设置环境变量
 ```
@@ -106,13 +106,12 @@ GO111MODULE=on
          ...
     }
 ```
-6.  layout_dev.json配置里面各组件配置使用本地的，除了MQ使用
-```
-amqp://user001:userspassword001@mq:5672/
-```
-如本地有AMQP可以使用本地的
+6.  启动配置里面各组件使用的服务（mysql、redis、MQ)
 
-6.  运行本地程序: go run main.go all_server 1 dev  (在此之前也可以先go mod tidy下载gomod包,也可以直接运行自动下载)
+7.  进入src目录运行本地程序: 
+```
+go run main.go all_server 1 dev
+```
 ### proto编译
 1.  安装protoBuf,地址<https://github.com/protocolbuffers/protobuf/releases> 下载protoc-X.X.X-win32.zip并解压
 2.  配置proto环境变量PATH里面 proto地址/bin;  
@@ -157,24 +156,3 @@ protoc --go_out=plugins=grpc:. message.proto
 1.  "open":"true" 意思是允许其他组件通过grpc调用这个组件里面的函数
 2.  "multi_line":"true" 意思是多线路
 3.  其余参数都为组件自身需要的参数
-
-### proto文件的修改
-如果新增游戏需要对message.proto添加一些配置：
-```
-// 游戏相关请求和推送协议
-
-// 游戏类型
-enum GameType{
-
-//资源改变的原因
-enum ResourceChangeReason {
-
-//玩家默认权限
-enum AuthorizationDef {
-
-// 机器人行为
-enum RobotAction {
-
------------------------------------------
-
-```
