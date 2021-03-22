@@ -29,18 +29,10 @@ set GO111MODULE=on
 ```
 4. 在工程目录下执行`go mod tidy`
 
-## Windows本地运行程序
-
-Windows编写程序与Linux编写程序基本一致，除了换行符CRLF与LF的区别会使git报错及文件权限有一些差异外暂未发现其他差异
-
 ### 运行程序 
-1.  安装Go1.15及以上版本
+1.  安装Go1.16
 2.  设置GOROOT和GOPATH（1.6开始不需要设置GOPATH）
 3.  设置环境变量
-```
-GOPROXY=https://goproxy.io
-GO111MODULE=on
-```
 4.  根据layout.json创建layout_dev.json,其中common_config与must服务不变,其他XX_server服务里面内容都放在新的all_server服务里面
     因为本地测试需要将所有服务都同时启动，rancher上面根据环境变量运行服务
     例如：
